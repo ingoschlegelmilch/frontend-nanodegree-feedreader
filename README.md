@@ -1,16 +1,13 @@
 # Udacity Fend-P5-feed-reader
-======
 
 This is my take on a project for the Udacity frontend nanodegree course introducing testing Javascript code using the Jasmine framework.
 You are given a blog site which fetches feeds from an API and have to write various tests for it.
 
 ## Instructions
-------
 
 In order to run this application, clone or download the files of this project and open `index.html` in your browser(the tests will be run automatically with feedback shown below the page content).
 
 ## Test specifications
-------
 
 To look at all the tests, please navigate to `jasmine/spec/` and open `feedreader.js` in your editor.
 All in all there are 4 different test suites:
