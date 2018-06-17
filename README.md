@@ -23,15 +23,15 @@ All in all there are 4 different test suites:
 
 ...checks if the objects stored within allFeeds have a name
 
-**The menu**
+2. **The menu**
 
 ...checks if the menu bar is initially hidden on page start-up
 
 ...checks if the menu bar class is toggled when the burger icon is clicked
 
-**Initial Entries**
+3. **Initial Entries**
 
 ...checks if there is at least one entry within the feed container
 
-**New Feed Selection**
+4. **New Feed Selection**
 ...checks if the content changes when another category is chosen(a different index of the allFeeds-array is called)
