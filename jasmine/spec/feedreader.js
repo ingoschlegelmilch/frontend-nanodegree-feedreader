@@ -66,7 +66,7 @@ $(function() {
         it('is hidden by default', function() {
 
             expect(body.className).toBeDefined();
-            expect(body.className).toBe('menu-hidden');
+            expect(body.classList.contains('menu-hidden')).toBe(true);
         })
 
         /* TODO: Write a test that ensures the menu changes
@@ -78,10 +78,10 @@ $(function() {
             var icon = document.querySelector('.menu-icon-link');
 
             icon.click();
-            expect(body.className).toBe('');
+            expect(body.classList.contains('menu-hidden')).toBe(false);
 
             icon.click();
-            expect(body.className).toBe('menu-hidden');
+            expect(body.classList.contains('menu-hidden')).toBe(true);
          })
     });
 
@@ -99,11 +99,9 @@ $(function() {
         })
 
         it('has at least a single entry within the feed container', function() {
-            var checkFeed = document.querySelector('.feed').length;
-            var checkEntry = document.querySelector('.entry').length;
+            var feed = document.querySelector('.feed');
 
-            expect(checkFeed).not.toBe(0);
-            expect(checkEntry).not.toBe(0);
+            expect(feed.querySelectorAll('.entry').length).toBeGreaterThan(0);
         })
     });
 
@@ -119,17 +117,15 @@ $(function() {
         beforeEach(function(done) {
             loadFeed(0, function() {
                 initialFeed = document.querySelector('.feed').innerHTML;
-                done();
-            })
+                loadFeed(1, function() {
+                    newFeed = document.querySelector('.feed').innerHTML;
+                    done();
+                })
+            })    
         });
 
         it('has changing content', function() {
-            loadFeed(1, function(done) {
-                newFeed = document.querySelector('.feed').innerHTML;
-                done();
-            })
-
             expect(newFeed === initialFeed).toBe(false);
-        })
+        });
     });
 }());
